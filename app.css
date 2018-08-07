@@ -1,0 +1,177 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 600px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 100px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 600px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+/*
+ * Styles for the Modal box
+ */
+
+ .modal_container {
+   background-color: rgba(0,0,0,0.5);
+   /* opacity: 0.5; we can set this with rgba itself as done above*/
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+ }
+
+ .modal_body {
+   background-color: RGB(500,800,500);
+   position: relative;
+   transform: translate(-50%,-70%);
+   /* "transform" helps position the modal box accurately which is not achieved
+      even with specifying top and left as 50%  */
+   width: 400px;
+   /* height: 300px; */
+   top: 50%;
+   left: 50%;
+   z-index: 1;
+ }
+
+ .modal_header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 1.5rem;
+   border-bottom: 1px solid gray;
+ }
+
+ .modal_close {
+   font-size: 1.5rem;
+   font-weight: bold;
+   cursor: pointer;
+ }
+
+ .modal_stats {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: left;
+   padding-left: 35%;
+   padding-top: 10px;
+   border-bottom: 1px solid gray;
+ }
+
+ .modal_buttons {
+   display: flex;
+   /* flex-direction: column; */
+   justify-content: space-around;
+   align-items: center;
+   padding: 1rem;
+ }
+
+ .mcancel, .mretry {
+   height: 30px;
+   width: 60px;
+ }
+
+ .hide {
+   display: none;
+ }
